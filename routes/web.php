@@ -21,3 +21,4 @@ Route::get('admin/contacts/data', 'ContactController@getData');
 Route::post('admin/contacts/store', 'ContactController@postStore');
 Route::post('admin/contacts/update', 'ContactController@postUpdate');
 Route::post('admin/contacts/delete', 'ContactController@postDelete');
+Route::resource('blogs','BlogController');
