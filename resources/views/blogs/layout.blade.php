@@ -7,7 +7,7 @@
 <body>
 <div class="jumbotron text-center">
   <h1>Laravel 6 CRUD </h1>
-  <p>By: Siddharth Shukla</p> 
+  <p>By: Md.Istiak Alam</p> 
 </div>
   
 <div class="container">
