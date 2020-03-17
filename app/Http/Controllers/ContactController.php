@@ -1,36 +1,108 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    public function getIndex()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-        return view('Contact');
+        $contacts = Contact::latest()->paginate(5);
+  
+        return view('contacts.index',compact('contacts'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
-    public function getData()
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        return Contact::all();
+        return view('contacts.create');
     }
-    public function postStore(Request $r)
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-        Contact::create($r->all());
-        return ['success'=>true,'message'=>'Inserted Successfully'];
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+        ]);
+  
+        Contact::create($request->all());
+   
+        return redirect()->route('contacts.index')
+                        ->with('success','Contact created successfully.');
     }
-    public function postUpdate(Request $r)
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Contact  $blog
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Contact $contact)
     {
-        if($r->has('id')){
-            Contact::find($r->input('id'))->update($r->all());
-            return ['success'=>true,'message'=>'Updated Successfully'];
-        }
+        return view('contacts.show',compact('contact'));
     }
-    public function postDelete(Request $r)
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Contact  $blog
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Contact $contact)
     {
-        if($r->has('id')){
-            Contact::find($r->input('id'))->delete();
-            return ['success'=>true,'message'=>'Deleted Successfully'];
-        }
+        return view('contacts.edit',compact('contact'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Contact  $blog
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Contact $contact)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+        ]);
+  
+        $contact->update($request->all());
+  
+        return redirect()->route('contacts.index')
+                        ->with('success','Contact updated successfully');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Contact  $blog
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Contact $contact)
+    {
+        $contact->delete();
+  
+        return redirect()->route('contacts.index')
+                        ->with('success','Contact deleted successfully');
     }
 }
