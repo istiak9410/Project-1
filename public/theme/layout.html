@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Foreign Tour Approval</title>
+
+	<!-- Custom fonts for this theme -->
+	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+	  <!-- Theme CSS -->
+	<link href="css/freelancer.min.css" rel="stylesheet">
+	<style>
+		img {
+		  border-radius: 50%;
+		}
+	</style>
+</head>
+
+<body id="page-top">
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg text-uppercase fixed-top background-color:#1779ba;" style="background-color: #1A6BA0;" id="mainNav">
+		  <a onclick="goBack()"><img src="img/backButton.png" height="50" width="50" ></a>
+		<div class="container">
+			<a class="navbar-brand js-scroll-trigger" href="#">Power Sector ERP Solution</a>
+			<button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				Menu
+				<i class="fas fa-bars"></i>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+				  <li class="nav-item mx-0 mx-lg-1">
+					<!--<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Foreign Tour Application.html">Foreign Tour Application</a>-->
+				  </li>
+				  <li class="nav-item mx-0 mx-lg-1">
+				   <!-- <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Foreign Tour Approval.html">Foreign Tour Approval</a>-->
+				  </li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<br><br>
+
+	<section class="page-section"  id="contact">
+		<div class="container">
+		  <!-- Contact Section Heading -->
+		  <h3 class=" text-center text-uppercase  mb-0" style="color: #1A6BA0">Foreign Tour Approval</h3>
+		</div>
+	</section>
+
+    <div class="container">
+		<!--tab Head-->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#Pending" role="tab" aria-controls="home" aria-selected="true"><b>Pending</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Approved" role="tab" aria-controls="profile" aria-selected="false"><b>Approved</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#declined" role="tab" aria-controls="contact" aria-selected="false"><b>Declined</b></a>
+          </li>
+        </ul>
+		<!--tab option end-->
+		<!--tab content-->
+		<div class="tab-content" id="myTabContent">
+			<!--tab-1 start-->
+			<div class="tab-pane fade show active" id="Pending" role="tabpanel" aria-labelledby="Pending-tab">
+				<br>
+				<!--card-1 start-->
+			<div class="card">
+				<div class="card-body row">
+					<div class="col-md-2"><img src="emp1.jpg" alt="Avatar" style="width:80px">
+					</div>
+					<div class="col-md-8">
+						<a href="readonlyform.htm" style="color:#1779ba;"><h5 class="card-title">HARIS MOHAMMAD WAHEDI</h5></a>
+						<p style="color:#228B22;"> EXECUTIVE ENGINEER, 
+									ELECTRICAL (225 MW), APSCL</p>
+						<p class="card-text"> China, April/22/2020 - April/28/2020, Inspection</p>
+					</div>
+					<div class="col-md-2"><a href="#" onclick="Approve()" class="btn btn-success float-right btn-block">Approve</a>
+							<br><br>
+						<a href="#" onclick="Decline()" class="btn btn-danger  float-right btn-block">Decline</a>
+					</div>
+				</div>
+				<!--card-1 End-->
+				<br>
+			</div>
+        </div>
+			<!--tab-1 End-->
+		
+			<!--tab-2 start-->
+			<div class="tab-pane fade" id="Approved" role="tabpanel" aria-labelledby="Approved-tab">
+			<br>
+			<!--card-1 start-->
+			<div class="card">
+				<div class="card-body row">
+					<div class="col-md-2"><img src="emp7.jpg" alt="Avatar" style="width:70px">
+					</div>
+					<div class="col-md-8">
+						<a href="user_ps_tour_details.htm" style="color:#1779ba;"><h5 class="card-title">OLI AHAD KHAN</h5></a>
+									<p style="color:#228B22;">EXECUTIVE ENGINEER, 
+										  ELECTRICAL (225 MW), APSCL</p>
+									<p class="card-text"> China, Oct/15/2018 - Nov/15/2018, Inspection</p>
+					</div>
+					<div class="col-md-2"><br><a href="#" class="btn btn-success float-right btn-block">Approved</a>
+					</div>
+				</div>
+			</div>
+			<!--card-1 End-->
+			<br>
+        </div>
+			<!--tab-2 End-->
+		
+			<!--tab-3 start-->
+			<div class="tab-pane fade" id="declined" role="tabpanel" aria-labelledby="declined-tab">
+			<br>
+			<!--card-1 start-->
+            <div class="card">
+				<div class="card-body row">
+					<div class="col-md-2"><img src="kalum.jpg" alt="Avatar" style="width:70px">
+					</div>
+					<div class="col-md-8">
+					  <a href="user_ps_tour_details.htm" style="color:#1779ba;"><h5 class="card-title">KAZI ABDUL KAIUM</h5></a>
+					  <p style="color:#228B22;">EXECUTIVE ENGINEER, 
+							ELECTRICAL (225 MW), APSCL</p>
+					  <p class="card-text"> China, Oct/15/2018 - Nov/15/2018, Inspection</p>
+					</div>
+					<div class="col-md-2"><br><a href="#" class="btn btn-danger float-right btn-block">Declined</a>
+					</div>
+				</div>
+			</div>
+			<!--card-1 start-->
+			<br>
+        </div>
+			<!--tab-3 End--> 
+		</div>
+		<!--tab content end-->
+	</div>
+     
+  
+	<!--JavaScript -->
+	<script>
+		function goBack() {
+		  window.history.back();
+		}
+	</script>
+	<script>
+		function Approve() {
+		  alert("The foreign tour application has been approved.");
+		}
+		function Decline() {
+		  alert("The foreign tour application has been declined.");
+		}
+	</script>
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	  <!-- Plugin JavaScript -->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+	  <!-- Contact Form JavaScript -->
+	<script src="js/jqBootstrapValidation.js"></script>
+	<script src="js/contact_me.js"></script>
+	  <!-- Custom scripts for this template -->
+	<script src="js/freelancer.min.js"></script>
+</body>
+</html>
+
+
