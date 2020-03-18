@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 // Route::post('admin/contacts/update', 'ContactController@postUpdate');
 // Route::post('admin/contacts/delete', 'ContactController@postDelete');
 
-Route::view('/', 'adminLayout');
+Route::view('/', 'home');
 Route::resource('blogs','BlogController');
 Route::resource('contacts','ContactController');
 Auth::routes();
