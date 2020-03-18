@@ -21,5 +21,14 @@ use Illuminate\Support\Facades\Route;
 // Route::post('admin/contacts/store', 'ContactController@postStore');
 // Route::post('admin/contacts/update', 'ContactController@postUpdate');
 // Route::post('admin/contacts/delete', 'ContactController@postDelete');
+
+Route::view('/', 'adminLayout');
 Route::resource('blogs','BlogController');
 Route::resource('contacts','ContactController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
